@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Publicar articulo
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="formPost">
+                        <div class="form-group mb-4">
+                            <label>Título *</label>
+                            <input type="text" formControlName="titulo" class="form-control" required>
+                            <span *ngIf="campoNoValido('titulo')" class="text-danger">
+                            Este campo es requerido*
+                            </span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="formFile" class="form-label">Image</label>
+                            <input class="form-control" type="file" formControlName="image" id="formFile">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label>Contenido *</label>
+                            <textarea formControlName="contenido" rows="6" class="form-control" required></textarea>
+                            <span *ngIf="campoNoValido('contenido')" class="text-danger">
+                              Este campo es requerido*
+                              </span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label>Contenido embebido</label>
+                            <textarea formControlName="iframe" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group mb-4">
+                            <button type="submit" [disabled]="formPost.invalid" class="btn btn-primary" (click)="add()">Publicar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
