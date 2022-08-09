@@ -1,24 +1,20 @@
-<div class="container">
+<div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-
             <div class="card mb-4">
                 <img class="card-img-top" src="" alt="">
                 <div class="card-body">
-                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium amet sint corporis voluptate odit atque, suscipit voluptatibus quos animi impedit inventore nulla. Minima sit modi sunt enim vitae quis.</h3>
-                    <div class="embed-responsive embed-responsive-16by9">
+                    <h3>{{ post?.titulo}}</h3>
+                    <img *ngIf="post?.imagen" [src]="post?.imagen" alt="">
+                    <div *ngIf="post?.iframe" class="embed-responsive embed-responsive-16by9">
+                        {{post?.iframe}}
                     </div>
                     <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore iure repellat ea alias in placeat laudantium ad sint cum similique saepe eveniet unde molestiae harum excepturi sed, perferendis consequuntur quae. Amet quasi reprehenderit minus laborum.
-                        Optio repudiandae a, laudantium sit cum corporis fugiat pariatur dolores laborum illum quibusdam eius porro officia eos veniam enim, nobis ab, fugit non nisi saepe. Non tempora incidunt omnis reiciendis. Adipisci temporibus ad
-                        unde dicta, eius qui, perspiciatis magnam nam distinctio iure soluta pariatur eaque explicabo voluptate mollitia quidem, porro sequi dolorem nisi iusto natus. Perspiciatis, expedita odit impedit recusandae architecto dolore fugit!
-                        Tenetur aliquid impedit asperiores in ad dolor accusamus obcaecati, aperiam at, velit hic modi minima eos labore, veniam quam beatae distinctio aliquam? Reprehenderit quisquam est voluptatem! Ducimus unde corporis sequi repudiandae
-                        facilis id atque voluptatibus deserunt fugiat, maxime et fugit consequuntur quam earum odit commodi rerum nemo. Rem ipsam mollitia fugiat sint.
-                    </p>
+                        {{post?.contenido}}</p>
                     <p class="tex-muted mb-0">
                         <em>
                             &ndash; Sergio
-                        </em> 12/02/2022
+                        </em> {{post?.fecha | date: "dd-MM-yyyy"}}
                     </p>
                 </div>
             </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../../services/post.service';
+import { Post } from '../../interfaces/post';
 
 @Component({
   selector: 'app-articulo',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticuloComponent implements OnInit {
 
-  constructor() { }
+  idArticulo: number;
+  post: Post | null = null;
 
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
+    this.idArticulo = +activatedRoute.snapshot.paramMap.get('id')!;
+    console.log(this.idArticulo);
   }
 
+  ngOnInit(): void {
+    this.getPost();
+  }
+
+  getPost() {
+    this.postService.getArticulo(this.idArticulo)
+      .subscribe(data => {
+        this.post = data;
+        console.log("post: ",data);
+      });
+  }
 }

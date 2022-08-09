@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-14">
             <div class="card">
                 <div class="card-header">
                     Posts
@@ -21,15 +21,15 @@
                             <tr *ngFor="let post of listPost">
                                 <td>{{post.id}}</td>
                                 <td>
-                                    <a [routerLink]="['/articulo', 1]">
+                                    <a [routerLink]="['/articulo', post.id]">
                                       {{post.titulo}}
                                     </a>
                                 </td>
                                 <td>{{post.contenido}}</td>
-                                <td>{{post.created_at | date }}</td>
+                                <td>{{post.fecha | date }}</td>
                                 <td class="buttons">
-                                    <button class="btn btn-primary">Editar</button>&ndash;
-                                    <button class="btn btn-danger">Eliminar</button>
+                                    <button [routerLink]="['/editar', post.id]" class="btn btn-primary">Editar</button>
+                                    <button (click)="deletePost(post.id)" class="btn btn-danger">Eliminar</button>
                                 </td>
                             </tr>
                         </tbody>

@@ -29,7 +29,7 @@
                         ],
                         "styles": [
                             "src/styles.scss",
-                            "bootswatch/dist/zephyr/bootstrap.min.css"
+                            "bootswatch/dist/Darkly/bootstrap.min.css"
                         ],
                         "scripts": [
                             "bootstrap/dist/js/bootstrap.min.js"

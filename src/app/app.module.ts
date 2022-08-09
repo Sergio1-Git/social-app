@@ -8,6 +8,8 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { AddPostComponent } from './views/add-post/add-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArticuloComponent } from './views/articulo/articulo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EditComponent } from './views/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { ArticuloComponent } from './views/articulo/articulo.component';
     HomeComponent,
     NavbarComponent,
     AddPostComponent,
-    ArticuloComponent
+    ArticuloComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

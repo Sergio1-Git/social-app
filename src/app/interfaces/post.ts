@@ -4,7 +4,15 @@ export interface Post {
   contenido: string;
   imagen?: string;
   iframe?: string;
-  created_at: Date;
+  fecha: string;
   updated_at?: Date;
   slug?: string;
+}
+
+export interface CreatePostDTO extends Omit<Post, 'id'>{
+  
+}
+
+export interface UpdatePostDTO  extends Partial<CreatePostDTO>{
+
 }
